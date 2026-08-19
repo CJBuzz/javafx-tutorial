@@ -29,7 +29,7 @@
 }
 
 .scroll-bar {
-    -fx-font-size: 10px;
+    -fx-font-size: 10px;    /* Change width of scroll bar. */
     -fx-background-color: main-color;
 }
 
@@ -38,6 +38,7 @@
     -fx-background-radius: 1em;
 }
 
+/* Hides the increment and decrement buttons. */
 .scroll-bar .increment-button,
 .scroll-bar .decrement-button {
     -fx-pref-height: 0;
