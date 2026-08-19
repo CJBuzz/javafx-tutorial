@@ -22,6 +22,7 @@ public class Main extends Application {
 
     private final Image userImage = loadImage("/images/DaUser.png");
     private final Image dukeImage = loadImage("/images/DaDuke.png");
+    private Duke duke = new Duke();
 
     private static Image loadImage(String resourcePath) {
         URL resource = Main.class.getResource(resourcePath);
@@ -95,7 +96,12 @@ public class Main extends Application {
      * the dialog container. Clears the user input after processing.
      */
     private void handleUserInput() {
-        dialogContainer.getChildren().addAll(new DialogBox(userInput.getText(), userImage));
+        String userText = userInput.getText();
+        String dukeText = duke.getResponse(userInput.getText());
+        dialogContainer.getChildren().addAll(
+                new DialogBox(userText, userImage),
+                new DialogBox(dukeText, dukeImage)
+        );
         userInput.clear();
     }
 }
